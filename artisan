@@ -1,0 +1,65 @@
+#!/usr/bin/env php
+<?php
+
+use Illuminate\Foundation\Application;
+use Symfony\Component\Console\Input\ArgvInput;
+
+define('LARAVEL_START', microtime(true));
+
+/**
+ * Open browser automatically when running `php artisan serve`.
+ */
+function openBrowserForServeCommand(array $argv): void
+{
+    if (!in_array('serve', $argv, true)) {
+        return;
+    }
+
+    if (in_array('--no-open', $argv, true) || getenv('ARTISAN_AUTO_OPEN_BROWSER') === '0') {
+        return;
+    }
+
+    $host = '127.0.0.1';
+    $port = '8000';
+
+    foreach ($argv as $arg) {
+        if (str_starts_with($arg, '--host=')) {
+            $host = substr($arg, 7) ?: $host;
+        }
+
+        if (str_starts_with($arg, '--port=')) {
+            $port = substr($arg, 7) ?: $port;
+        }
+    }
+
+    if ($host === '0.0.0.0') {
+        $host = '127.0.0.1';
+    }
+
+    $url = sprintf('http://%s:%s', $host, $port);
+
+    switch (PHP_OS_FAMILY) {
+        case 'Windows':
+            @pclose(@popen('start "" "' . $url . '"', 'r'));
+            break;
+        case 'Darwin':
+            @exec('open ' . escapeshellarg($url) . ' >/dev/null 2>&1 &');
+            break;
+        default:
+            @exec('xdg-open ' . escapeshellarg($url) . ' >/dev/null 2>&1 &');
+            break;
+    }
+}
+
+// Register the Composer autoloader...
+require __DIR__.'/vendor/autoload.php';
+
+// Bootstrap Laravel and handle the command...
+/** @var Application $app */
+$app = require_once __DIR__.'/bootstrap/app.php';
+
+$input = new ArgvInput;
+openBrowserForServeCommand($argv);
+$status = $app->handleCommand($input);
+
+exit($status);

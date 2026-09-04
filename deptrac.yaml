@@ -1,0 +1,39 @@
+# deptrac.yaml
+#
+# Enforces the target layer dependency rule for the active application surface.
+# Legacy folders are intentionally excluded until the physical cleanup phase.
+
+deptrac:
+  paths:
+    - ./app
+  layers:
+    - name: Domain
+      collectors:
+        - type: directory
+          value: app/Domain/.*
+    - name: Application
+      collectors:
+        - type: directory
+          value: app/Application/.*
+    - name: Infrastructure
+      collectors:
+        - type: directory
+          value: app/Infrastructure/.*
+    - name: Presentation
+      collectors:
+        - type: directory
+          value: app/Presentation/.*
+  ruleset:
+    # Domain murni tidak boleh coupling ke mana pun (kosong)
+    Domain: ~ 
+    # Application hanya boleh coupling/memanggil file Domain
+    Application:
+      - Domain
+    # Infrastructure boleh memanggil logika Application & tipe data dari Domain
+    Infrastructure:
+      - Application
+      - Domain
+    # Controller (Presentation) murni adapter, panggil Application (Use Case/Service)
+    Presentation:
+      - Application
+      - Domain

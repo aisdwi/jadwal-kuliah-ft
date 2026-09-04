@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 156 28% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 156 28% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 156 28% 18%;
+
+    --primary: 151 62% 31%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 162 52% 36%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 156 18% 38%;
+
+    --accent: 145 44% 43%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 151 62% 31%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 156 22% 28%;
+    --sidebar-primary: 151 62% 31%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 148 22% 88%;
+    --sidebar-accent-foreground: 156 22% 24%;
+    --sidebar-border: 149 20% 86%;
+    --sidebar-ring: 151 62% 31%;
+
+    /* Custom tokens for glassmorphism */
+    --glass-bg: 0 0% 100% / 0.58;
+    --glass-border: 151 25% 45% / 0.18;
+    --glass-hover: 151 25% 45% / 0.12;
+    --gradient-mesh:
+      radial-gradient(circle at 0% 0%, hsl(145 48% 92%) 0%, hsl(145 28% 95% / 0) 45%),
+      radial-gradient(circle at 100% 0%, hsl(162 35% 90%) 0%, hsl(162 35% 95% / 0) 48%),
+      linear-gradient(135deg, hsl(146 35% 95%), hsl(154 28% 93%));
+    --gradient-primary: linear-gradient(135deg, hsl(151 62% 31%), hsl(161 63% 38%));
+    --gradient-accent: linear-gradient(135deg, hsl(144 50% 36%), hsl(172 50% 38%));
+    --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.08);
+    --shadow-card-hover: 0 12px 40px rgba(0, 0, 0, 0.12);
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 38 10% 10%;
+    --success: 160 60% 45%;
+    --success-foreground: 160 10% 98%;
+    --info: 199 78% 46%;
+    --info-foreground: 210 10% 98%;
+    --chart-1: 151 62% 31%;
+    --chart-2: 162 52% 36%;
+    --chart-3: 145 44% 43%;
+    --chart-4: 199 78% 46%;
+    --chart-5: 38 88% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    /* background: var(--gradient-mesh); */
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply backdrop-blur-2xl border shadow-lg;
+    background: hsl(0 0% 100% / 0.62);
+    border-color: hsl(0 0% 90% / 0.8);
+    background-clip: padding-box;
+  }
+
+  .glass-card {
+    @apply backdrop-blur-3xl border rounded-2xl transition-all duration-300 /* replaced shadow */;
+    background: hsl(0 0% 100% / 0.68);
+    border-color: hsl(0 0% 90% / 0.78);
+    background-clip: padding-box;
+  }
+
+  .glass-card:hover {
+    @apply backdrop-blur-3xl /* replaced shadow */;
+    background: hsl(0 0% 100% / 0.82);
+    border-color: hsl(0 0% 90% / 0.8);
+  }
+
+  .glass-input {
+    @apply backdrop-blur-2xl border rounded-lg text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-0 transition-all duration-200;
+    background: hsl(0 0% 100% / 0.78);
+    border-color: hsl(0 0% 90% / 0.82);
+    background-clip: padding-box;
+  }
+
+  .glass-sidebar {
+    @apply backdrop-blur-3xl border-r;
+    background: hsl(0 0% 100% / 0.84);
+    border-color: hsl(0 0% 90% / 0.82);
+    background-clip: padding-box;
+  }
+
+  .glass-table-header {
+    @apply bg-white/30 backdrop-blur-lg text-muted-foreground font-semibold text-xs uppercase tracking-wider border-b border-white/50;
+  }
+
+  .glass-table-row {
+    @apply border-b border-white/40 transition-all duration-200 hover:bg-white/30;
+  }
+
+  .gradient-btn {
+    background: var(--gradient-primary);
+    @apply text-white font-semibold rounded-xl transition-all duration-300 hover:brightness-110 hover:shadow-xl hover:shadow-primary/30 active:scale-95 px-4 py-2;
+  }
+
+  .gradient-accent-btn {
+    background: var(--gradient-accent);
+    @apply text-white font-semibold rounded-xl transition-all duration-300 hover:brightness-110 active:scale-95 px-4 py-2;
+  }
+
+  .nav-item {
+    @apply flex items-center gap-3 px-4 py-3 rounded-xl border border-transparent text-sm font-medium text-muted-foreground transition-all duration-200 hover:bg-primary/10 hover:backdrop-blur-lg hover:text-foreground cursor-pointer;
+  }
+
+  .nav-item-active {
+    background: var(--gradient-primary);
+    @apply border-primary text-white font-bold shadow-[0_10px_26px_rgba(11,75,38,0.22)] backdrop-blur-xl;
+  }
+
+  .nav-item-active:hover {
+    @apply text-white;
+  }
+
+  .nav-item-active svg {
+    @apply text-white;
+  }
+
+  .nav-item-active:hover svg {
+    @apply text-white;
+  }
+
+  .pill-card {
+    @apply bg-white/40 backdrop-blur-lg border border-white/60 rounded-full px-4 py-2 text-xs transition-all duration-200;
+  }
+
+  .drop-zone {
+    @apply border-2 border-dashed border-white/60 rounded-xl transition-all duration-200 p-4;
+  }
+
+  .drop-zone-active {
+    @apply border-primary/70 bg-primary/10 backdrop-blur-lg;
+  }
+
+  /* Additional glassmorphism enhancements */
+  .glass-overlay {
+    @apply bg-black/5 backdrop-blur-sm;
+  }
+
+  .glass-elevated {
+    @apply backdrop-blur-2xl border rounded-2xl shadow-2xl;
+    background: hsl(0 0% 100% / 0.78);
+    border-color: hsl(0 0% 90% / 0.84);
+  }
+
+  .form-field-input {
+    @apply border-white bg-white text-foreground placeholder:text-muted-foreground/70 focus-visible:border-primary focus-visible:ring-0;
+    box-shadow: 0 1px 2px rgba(255, 255, 255, 0.9), 0 4px 14px rgba(11, 75, 38, 0.06);
+  }
+
+  .password-input-no-reveal::-ms-reveal,
+  .password-input-no-reveal::-ms-clear {
+    display: none;
+  }
+
+  .form-field-select-trigger {
+    @apply border-white bg-white text-sm text-foreground focus:border-primary focus:ring-0 focus-visible:ring-0;
+    box-shadow: 0 1px 2px rgba(255, 255, 255, 0.9), 0 4px 14px rgba(11, 75, 38, 0.06);
+  }
+
+  .form-field-select-content {
+    @apply z-[90] border-white/95 bg-white/95 backdrop-blur-md /* replaced shadow */;
+  }
+
+  .table-search-input {
+    @apply border-border/80 bg-white/70 text-foreground placeholder:text-muted-foreground /* replaced shadow */ focus-visible:border-primary focus-visible:ring-0;
+  }
+
+  .modal-overlay-soft {
+    @apply bg-black/35 backdrop-blur-[1.5px];
+  }
+
+  .modal-surface {
+    @apply rounded-2xl border border-white/85 bg-white/75 p-6 shadow-2xl backdrop-blur-xl;
+  }
+
+  .master-table-cell-content {
+    display: block;
+    max-height: 2.75rem;
+    min-width: 0;
+    overflow: hidden;
+    line-height: 1.375rem;
+  }
+
+  .master-table-cell-content > * {
+    min-width: 0;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+}
