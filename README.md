@@ -1,10 +1,12 @@
 # 🎓 Jadwal Kuliah FT
 
-<div align="justify-content">
+<div align="justify">
 
 ### Sistem Penjadwalan Perkuliahan
 
 **Fakultas Teknik — Universitas Riau**
+
+<div align="justify">
 
 Aplikasi berbasis web yang dirancang untuk membantu proses
 pengelolaan, penyusunan, dan pemantauan jadwal perkuliahan
