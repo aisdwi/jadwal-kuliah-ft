@@ -3,21 +3,12 @@
 <div align="center">
 
 ### Sistem Penjadwalan Perkuliahan
+
 **Fakultas Teknik — Universitas Riau**
 
 Aplikasi berbasis web yang dirancang untuk membantu proses
 pengelolaan, penyusunan, dan pemantauan jadwal perkuliahan
 di lingkungan Fakultas Teknik Universitas Riau.
-
-<br>
-
-![PHP](https://img.shields.io/badge/PHP-8.2%2B-777BB4?style=for-the-badge&logo=php&logoColor=white)
-![Laravel](https://img.shields.io/badge/Laravel-Framework-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
-![React](https://img.shields.io/badge/React-Frontend-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![MySQL](https://img.shields.io/badge/MySQL-Database-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-Build%20Tool-646CFF?style=for-the-badge&logo=vite&logoColor=white)
-
-</div>
 
 ---
 
@@ -37,7 +28,7 @@ fitur **generate jadwal otomatis** dengan parameter tertentu untuk
 membantu menghasilkan susunan jadwal yang lebih optimal dan
 meminimalkan bentrokan jadwal.
 
----
+<!-- ---
 
 ## 🎯 Project Goals
 
@@ -53,14 +44,11 @@ Project ini dikembangkan dengan beberapa tujuan utama:
 - 📊 Menyediakan pemantauan progres penjadwalan.
 - 📥 Menyediakan tampilan jadwal yang dapat diekspor untuk kebutuhan administrasi.
 
----
+--- -->
 
 ## ✨ Main Features
 
 ### 🔐 Authentication
-
-Sistem menyediakan halaman login untuk membatasi akses terhadap
-fitur pengelolaan penjadwalan.
 
 ### 📊 Dashboard
 
@@ -72,18 +60,6 @@ Dashboard menampilkan ringkasan kondisi penjadwalan, seperti:
 - Progres penjadwalan
 - Progres penjadwalan berdasarkan jurusan
 - Aktivitas terbaru
-
-### 📚 Master Data
-
-Pengelolaan data utama yang digunakan dalam proses penjadwalan:
-
-- Mata kuliah
-- Dosen
-- Nama kelas
-- Kelas perkuliahan
-- Ruang kuliah
-- Jam kuliah
-- Slot jadwal
 
 ### 📅 Table View
 
@@ -182,7 +158,7 @@ antara lain:
 <img src="assets/09-hasil-generate.png" width="850">
 </div>
 
----
+<!-- ---
 
 ## 🏗️ System Workflow
 
@@ -222,26 +198,26 @@ antara lain:
                     └───────────────────┘
 ```
 
----
+--- -->
 
 ## 🧠 Scheduling Constraints
 
 Proses generate jadwal mempertimbangkan beberapa constraint utama,
 di antaranya:
 
-| Constraint | Keterangan |
-|:--|:--|
-| 👨‍🏫 Bentrok Dosen | Mencegah dosen mengajar pada waktu yang sama |
-| 🏫 Bentrok Ruangan | Mencegah penggunaan ruangan secara bersamaan |
-| 👥 Bentrok Kelas | Mencegah kelas mendapatkan jadwal yang bertabrakan |
-| 🎓 Bentrok Angkatan | Mengurangi konflik jadwal berdasarkan angkatan |
-| ⏰ Preferensi Waktu | Mempertimbangkan preferensi waktu tertentu |
-| 📚 Beban Mengajar | Mempertimbangkan distribusi beban mengajar |
-| 🕐 Jeda Mengajar | Mempertimbangkan jeda waktu antar perkuliahan |
+| Constraint          | Keterangan                                         |
+| :------------------ | :------------------------------------------------- |
+| 👨‍🏫 Bentrok Dosen    | Mencegah dosen mengajar pada waktu yang sama       |
+| 🏫 Bentrok Ruangan  | Mencegah penggunaan ruangan secara bersamaan       |
+| 👥 Bentrok Kelas    | Mencegah kelas mendapatkan jadwal yang bertabrakan |
+| 🎓 Bentrok Angkatan | Mengurangi konflik jadwal berdasarkan angkatan     |
+| ⏰ Preferensi Waktu | Mempertimbangkan preferensi waktu tertentu         |
+| 📚 Beban Mengajar   | Mempertimbangkan distribusi beban mengajar         |
+| 🕐 Jeda Mengajar    | Mempertimbangkan jeda waktu antar perkuliahan      |
 
 ---
 
-## 🧬 Generate Schedule Process
+<!-- ## 🧬 Generate Schedule Process
 
 Proses generate jadwal dilakukan melalui beberapa tahapan:
 
@@ -277,7 +253,7 @@ Kriteria Berhenti?
 Jadwal Terbaik
 ```
 
----
+--- -->
 
 ## 🛠️ Tech Stack
 
@@ -297,7 +273,7 @@ Jadwal Terbaik
 
 ---
 
-## 🏗️ System Architecture
+<!-- ## 🏗️ System Architecture
 
 ```text
 ┌─────────────────────────────┐
@@ -323,9 +299,9 @@ Jadwal Terbaik
 └─────────────────────────────┘
 ```
 
----
+--- -->
 
-## 📂 Project Structure
+<!-- ## 📂 Project Structure
 
 ```text
 JadwalKuliahFT/
@@ -355,7 +331,7 @@ JadwalKuliahFT/
 └── README.md
 ```
 
----
+--- -->
 
 ## ⚙️ Installation
 
@@ -411,19 +387,16 @@ Administrator dapat:
 
 ---
 
-## 👨‍💻 Development Team
+## 👥 Development Team
 
 <div align="center">
 
-| No. | Member | Role |
-|:---:|:---|:---|
-| 1 | **Nama Anggota 1** | Full Stack Development |
-| 2 | **Nama Anggota 2** | Frontend Development |
-| 3 | **Nama Anggota 3** | Backend Development |
+| No. | Member                   | Student ID | Role                 |                 GitHub                 |
+| :-: | :----------------------- | :--------: | :------------------- | :------------------------------------: |
+|  1  | **M Hashfi Fanny AYD**   | 2207112576 | Frontend Development | [GitHub](https://github.com/hashfiayd) |
+|  2  | **Aisyah Dwi Syahputri** | 2207113385 | Backend Development  |  [GitHub](https://github.com/aisdwi)   |
 
 </div>
-
----
 
 <div align="center">
 
