@@ -1,6 +1,6 @@
 # 🎓 Jadwal Kuliah FT
 
-<div align="center">
+<div align="justify-content">
 
 ### Sistem Penjadwalan Perkuliahan
 
