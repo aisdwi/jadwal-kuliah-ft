@@ -1,175 +1,434 @@
-# Jadwal Kuliah FT
+# 🎓 Jadwal Kuliah FT
 
-Sistem penjadwalan kuliah Fakultas Teknik Universitas Riau.
+<div align="center">
 
-## Kebutuhan
+### Sistem Penjadwalan Perkuliahan
+**Fakultas Teknik — Universitas Riau**
 
-- PHP 8.2 atau lebih baru
-- Composer
-- Node.js 18 atau lebih baru
-- NPM
-- MySQL atau MariaDB
-- Git
+Aplikasi berbasis web yang dirancang untuk membantu proses
+pengelolaan, penyusunan, dan pemantauan jadwal perkuliahan
+di lingkungan Fakultas Teknik Universitas Riau.
 
-## Setup Awal
+<br>
 
-Clone repository:
+![PHP](https://img.shields.io/badge/PHP-8.2%2B-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![Laravel](https://img.shields.io/badge/Laravel-Framework-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![React](https://img.shields.io/badge/React-Frontend-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![MySQL](https://img.shields.io/badge/MySQL-Database-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-Build%20Tool-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 
-```bash
-git clone https://gitlab.com/unri-3/jadwal-kuliah-ft.git
-cd jadwal-kuliah-ft
+</div>
+
+---
+
+## 📖 About The Project
+
+**Jadwal Kuliah FT** merupakan sistem informasi berbasis web yang
+dikembangkan untuk membantu proses pengelolaan jadwal perkuliahan
+di **Fakultas Teknik Universitas Riau**.
+
+Sistem ini digunakan untuk mengelola berbagai data yang berkaitan
+dengan proses penjadwalan, seperti mata kuliah, dosen, kelas
+perkuliahan, ruangan, hari, waktu, slot jadwal, serta jadwal
+perkuliahan yang telah ditetapkan.
+
+Selain pengelolaan jadwal secara manual, sistem juga menyediakan
+fitur **generate jadwal otomatis** dengan parameter tertentu untuk
+membantu menghasilkan susunan jadwal yang lebih optimal dan
+meminimalkan bentrokan jadwal.
+
+---
+
+## 🎯 Project Goals
+
+Project ini dikembangkan dengan beberapa tujuan utama:
+
+- 📅 Mempermudah proses penyusunan jadwal perkuliahan.
+- 🏫 Mengelola data ruangan dan resource perkuliahan.
+- ⏰ Mengatur hari dan waktu perkuliahan.
+- 📚 Mengelola kelas dan kebutuhan SKS mata kuliah.
+- 👨‍🏫 Mengelola dosen pengampu mata kuliah.
+- 🔄 Membantu proses generate jadwal secara otomatis.
+- ⚠️ Mengurangi kemungkinan bentrokan dosen, ruangan, kelas, dan angkatan.
+- 📊 Menyediakan pemantauan progres penjadwalan.
+- 📥 Menyediakan tampilan jadwal yang dapat diekspor untuk kebutuhan administrasi.
+
+---
+
+## ✨ Main Features
+
+### 🔐 Authentication
+
+Sistem menyediakan halaman login untuk membatasi akses terhadap
+fitur pengelolaan penjadwalan.
+
+### 📊 Dashboard
+
+Dashboard menampilkan ringkasan kondisi penjadwalan, seperti:
+
+- Total dosen
+- Total ruangan
+- Mata kuliah aktif
+- Progres penjadwalan
+- Progres penjadwalan berdasarkan jurusan
+- Aktivitas terbaru
+
+### 📚 Master Data
+
+Pengelolaan data utama yang digunakan dalam proses penjadwalan:
+
+- Mata kuliah
+- Dosen
+- Nama kelas
+- Kelas perkuliahan
+- Ruang kuliah
+- Jam kuliah
+- Slot jadwal
+
+### 📅 Table View
+
+Menampilkan daftar jadwal perkuliahan dalam bentuk tabel dengan
+informasi hari, waktu, mata kuliah, kelas, semester, dosen,
+program studi, dan ruangan.
+
+### 🗓️ Timetable View
+
+Menampilkan jadwal dalam bentuk tabel waktu berdasarkan hari.
+Kelas dapat ditempatkan pada slot yang tersedia sehingga proses
+penyusunan jadwal menjadi lebih mudah dipantau.
+
+### ⚙️ Generate Jadwal Otomatis
+
+Sistem menyediakan proses generate jadwal otomatis dengan parameter
+seperti:
+
+- Jumlah populasi
+- Maksimal generasi
+- Crossover
+- Mutasi
+- Constraint penjadwalan
+
+Proses generate menampilkan progres dan nilai fitness sehingga
+hasil proses dapat dipantau secara langsung.
+
+### 📈 Evaluasi Hasil Generate
+
+Hasil generate dapat dievaluasi berdasarkan beberapa indikator,
+antara lain:
+
+- Fitness Score
+- Jumlah generasi
+- Bentrokan dosen
+- Bentrokan ruangan
+- Bentrokan kelas
+- Kepadatan slot
+- Peta kromosom terbaik
+
+---
+
+## 🖥️ Application View
+
+### 🔐 Login
+
+<div align="center">
+<img src="assets/01-login.png" width="850">
+</div>
+
+### 📊 Dashboard
+
+<div align="center">
+<img src="assets/02-dashboard.png" width="850">
+</div>
+
+### 📚 Data Kelas Perkuliahan
+
+<div align="center">
+<img src="assets/03-kelas-perkuliahan.png" width="850">
+</div>
+
+### 🧩 Slot Jadwal
+
+<div align="center">
+<img src="assets/04-slot-jadwal.png" width="850">
+</div>
+
+### 📋 Table View
+
+<div align="center">
+<img src="assets/05-table-view.png" width="850">
+</div>
+
+### 🗓️ Timetable View
+
+<div align="center">
+<img src="assets/06-timetable-view.png" width="850">
+</div>
+
+### ⚙️ Generate Jadwal
+
+<div align="center">
+<img src="assets/07-generate-jadwal.png" width="850">
+</div>
+
+### 🔄 Proses Generate
+
+<div align="center">
+<img src="assets/08-proses-generate.png" width="850">
+</div>
+
+### 📈 Hasil Generate
+
+<div align="center">
+<img src="assets/09-hasil-generate.png" width="850">
+</div>
+
+---
+
+## 🏗️ System Workflow
+
+```text
+                    ┌───────────────────┐
+                    │   Master Data     │
+                    ├───────────────────┤
+                    │ Mata Kuliah       │
+                    │ Dosen             │
+                    │ Kelas             │
+                    │ Ruangan           │
+                    │ Hari & Waktu      │
+                    │ Slot Jadwal       │
+                    └─────────┬─────────┘
+                              │
+                              ▼
+                    ┌───────────────────┐
+                    │  Kelas Perkuliahan│
+                    └─────────┬─────────┘
+                              │
+                              ▼
+                    ┌───────────────────┐
+                    │ Generate Jadwal   │
+                    │     Otomatis      │
+                    └─────────┬─────────┘
+                              │
+                              ▼
+                    ┌───────────────────┐
+                    │ Evaluasi Fitness  │
+                    │ & Constraints     │
+                    └─────────┬─────────┘
+                              │
+                              ▼
+                    ┌───────────────────┐
+                    │ Jadwal Perkuliahan│
+                    │      Terbaik      │
+                    └───────────────────┘
 ```
 
-Install dependency:
+---
+
+## 🧠 Scheduling Constraints
+
+Proses generate jadwal mempertimbangkan beberapa constraint utama,
+di antaranya:
+
+| Constraint | Keterangan |
+|:--|:--|
+| 👨‍🏫 Bentrok Dosen | Mencegah dosen mengajar pada waktu yang sama |
+| 🏫 Bentrok Ruangan | Mencegah penggunaan ruangan secara bersamaan |
+| 👥 Bentrok Kelas | Mencegah kelas mendapatkan jadwal yang bertabrakan |
+| 🎓 Bentrok Angkatan | Mengurangi konflik jadwal berdasarkan angkatan |
+| ⏰ Preferensi Waktu | Mempertimbangkan preferensi waktu tertentu |
+| 📚 Beban Mengajar | Mempertimbangkan distribusi beban mengajar |
+| 🕐 Jeda Mengajar | Mempertimbangkan jeda waktu antar perkuliahan |
+
+---
+
+## 🧬 Generate Schedule Process
+
+Proses generate jadwal dilakukan melalui beberapa tahapan:
+
+```text
+Parameter Generate
+        │
+        ▼
+Inisialisasi Populasi
+        │
+        ▼
+Evaluasi Fitness
+        │
+        ▼
+Seleksi
+        │
+        ▼
+Crossover
+        │
+        ▼
+Mutasi
+        │
+        ▼
+Evaluasi Ulang
+        │
+        ▼
+Kriteria Berhenti?
+     │        │
+    Tidak     Ya
+     │        │
+     └────────┘
+        │
+        ▼
+Jadwal Terbaik
+```
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+- ⚛️ React
+- ⚡ Vite
+
+### Backend
+
+- 🐘 PHP 8.2+
+- 🔥 Laravel
+
+### Database
+
+- 🐬 MySQL
+
+---
+
+## 🏗️ System Architecture
+
+```text
+┌─────────────────────────────┐
+│           User              │
+└──────────────┬──────────────┘
+               │
+               ▼
+┌─────────────────────────────┐
+│       React + Vite          │
+│          Frontend           │
+└──────────────┬──────────────┘
+               │
+               ▼
+┌─────────────────────────────┐
+│          Laravel            │
+│           Backend           │
+└──────────────┬──────────────┘
+               │
+               ▼
+┌─────────────────────────────┐
+│           MySQL             │
+│          Database           │
+└─────────────────────────────┘
+```
+
+---
+
+## 📂 Project Structure
+
+```text
+JadwalKuliahFT/
+│
+├── backend/
+│   ├── app/
+│   ├── database/
+│   ├── routes/
+│   └── ...
+│
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   └── ...
+│
+├── assets/
+│   ├── 01-login.png
+│   ├── 02-dashboard.png
+│   ├── 03-kelas-perkuliahan.png
+│   ├── 04-slot-jadwal.png
+│   ├── 05-table-view.png
+│   ├── 06-timetable-view.png
+│   ├── 07-generate-jadwal.png
+│   ├── 08-proses-generate.png
+│   └── 09-hasil-generate.png
+│
+└── README.md
+```
+
+---
+
+## ⚙️ Installation
+
+### 1. Clone Repository
 
 ```bash
+git clone https://github.com/USERNAME/JadwalKuliahFT.git
+cd JadwalKuliahFT
+```
+
+### 2. Backend Setup
+
+```bash
+cd backend
 composer install
-npm install
-```
-
-Buat file environment:
-
-```bash
 cp .env.example .env
-```
-
-Di Windows PowerShell:
-
-```powershell
-Copy-Item .env.example .env
-```
-
-Generate application key:
-
-```bash
 php artisan key:generate
 ```
 
-## Konfigurasi Database
-
-Buat database MySQL/MariaDB, misalnya `penjadwalan_perkuliahan`, lalu sesuaikan `.env`:
-
-```env
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=penjadwalan_perkuliahan
-DB_USERNAME=root
-DB_PASSWORD=
-```
-
-Import data awal dari dump yang masih digunakan:
-
-```bash
-mysql -u root -p penjadwalan_perkuliahan < penjadwalan_perkuliahan.sql
-```
-
-Setelah import, jalankan migration terbaru dan generate ulang slot jadwal per jurusan:
+Atur konfigurasi database pada file `.env`, kemudian jalankan:
 
 ```bash
 php artisan migrate
-php artisan schedule:regenerate-jurusan-slots --force
-php artisan optimize:clear
-```
-
-Perintah `schedule:regenerate-jurusan-slots` akan membersihkan slot/jadwal lama yang tidak valid, lalu membuat relasi slot berdasarkan kebutuhan SKS masing-masing jurusan.
-
-## Menjalankan Aplikasi
-
-Cara paling ringkas untuk development:
-
-```bash
-composer run dev
-```
-
-Command tersebut menjalankan backend Laravel, queue listener, dan Vite dev server.
-
-Jika ingin menjalankan manual, gunakan dua terminal:
-
-```bash
 php artisan serve
 ```
 
+### 3. Frontend Setup
+
 ```bash
+cd frontend
+npm install
 npm run dev
 ```
 
-Frontend Vite berjalan di `http://localhost:5173`, sedangkan backend Laravel biasanya di `http://localhost:8000`.
+---
 
-## Build Production
+## 🚀 Usage
 
-```bash
-npm run build
-```
+Setelah backend dan frontend berhasil dijalankan, buka aplikasi
+melalui browser.
 
-## Akun Default
+Administrator dapat:
 
-Jika memakai dump SQL atau seeder default:
+1. Login ke sistem.
+2. Mengelola master data.
+3. Mengatur kelas perkuliahan.
+4. Mengelola slot jadwal.
+5. Melihat jadwal melalui **Table View**.
+6. Menyusun dan memindahkan jadwal melalui **Timetable View**.
+7. Menjalankan **Generate Jadwal Otomatis**.
+8. Mengevaluasi hasil generate.
+9. Menetapkan hasil jadwal terbaik.
 
-```text
-Email: admin@unri.ac.id
-Password: admin123
-```
+---
 
-## Struktur Penting
+## 👨‍💻 Development Team
 
-- `app/Modules` - kode utama aplikasi berbasis modul.
-- `resources/js` - frontend React.
-- `routes/api.php` - route API utama.
-- `database/migrations` - migration database.
-- `database/seeders` - seeder data dasar.
-- `app/Modules/Penjadwalan` - modul penjadwalan.
-- `app/Modules/Resource` - modul ruangan, hari, waktu, dan slot.
+<div align="center">
 
+| No. | Member | Role |
+|:---:|:---|:---|
+| 1 | **Nama Anggota 1** | Full Stack Development |
+| 2 | **Nama Anggota 2** | Frontend Development |
+| 3 | **Nama Anggota 3** | Backend Development |
 
-## Command Penting
+</div>
 
-Regenerasi slot jadwal per jurusan:
+---
 
-```bash
-php artisan schedule:regenerate-jurusan-slots --force
-```
+<div align="center">
 
-Reset password user:
+### 🎓 Jadwal Kuliah FT
 
-```bash
-php artisan user:reset-password email@example.com password_baru
-```
+**Fakultas Teknik — Universitas Riau**
 
-Clear cache config dan route:
-
-```bash
-php artisan optimize:clear
-```
-
-## Testing
-
-Jalankan seluruh test:
-
-```bash
-php artisan test
-```
-
-## Troubleshooting
-
-Jika package frontend tidak ditemukan:
-
-```bash
-npm install
-npm run build
-```
-
-Jika class PHP tidak ditemukan:
-
-```bash
-composer dump-autoload
-php artisan optimize:clear
-```
-
-Jika CORS atau config masih memakai nilai lama:
-
-```bash
-php artisan optimize:clear
-```
-
-Jika database kosong setelah `migrate`, gunakan dump `penjadwalan-perkuliahan.sql` untuk data awal lengkap. Seeder bawaan hanya menyiapkan data minimum seperti user default.
+</div>
